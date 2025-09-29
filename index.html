@@ -40,6 +40,16 @@
     .links a{color:#111827; font-weight:600; padding:8px 10px; border-radius:10px}
     .links a:hover{background:#edf2ff; text-decoration:none}
 
+    /* 노란 마커 하이라이트 */
+    .hero-intro .hl-yellow{
+      padding: 0 .25em;
+      border-radius: 6px;
+      font-weight: 800;
+      color: #111; /* 다크 히어로에서 가독성 ↑ */
+      background: linear-gradient(transparent 52%, rgba(255, 214, 10, .88) 0);
+      box-shadow: 0 2px 0 rgba(0,0,0,.08) inset;
+    }
+
     /* HERO (dark) */
     .hero{
       background:var(--hero); color:var(--hero-ink); text-align:center;
@@ -174,14 +184,15 @@
     <div class="container">
       <h1 class="title">안녕하세요,<br/>유도우입니다.</h1>
       <p class="lead hero-intro">
-      저는 <span class="hl">꾸준함은 실력</span>이라는 신념으로 성장해 온 개발자입니다.<br/>
-      작은 노력도 매일 쌓이면 반드시 큰 성과로 이어진다는 <span class="hl">티끌 모아 태산</span>의 가치관을 바탕으로,
+      저는 <span class="hl hl-yellow">꾸준함은 실력</span>이라는 신념으로 성장해 온 개발자입니다.<br/>
+      작은 노력도 매일 쌓이면 반드시 큰 성과로 이어진다는
+      <span class="hl hl-yellow">티끌 모아 태산</span>의 가치관을 바탕으로,<br/>
       맡은 바에 성실히 임하며 결과를 만들어 냅니다.<br/>
       학부 시절 IoT 기반 가스 누출 방지 시스템을 직접 설계·구현해 대회 1등을 수상했고,<br/>
-      디지털 의료기기 산학과제에서는 LoRa 모듈과 7·5인치 LCD 펌웨어를 구성하고,
+      디지털 의료기기 산학과제에서는 LoRa 모듈과 7·5인치 LCD 펌웨어를 구성하고,<br/>
       기업과 협업해 안드로이드 앱을 제작하며 협업 경험을 쌓았습니다.<br/>
       석사과정에서는 <span class="hl">PLC 기반 실시간 위치 추적 화재 감지/수신 시스템</span>을
-      회로 설계부터 PCB 제작, 펌웨어까지 전 과정을 직접 수행하여,
+      회로 설계부터 PCB 제작,<br/>펌웨어까지 전 과정을 직접 수행하여,
       기존 열감지 방식 대비 <span class="hl">더 빠르고 정확한 감지 성능</span>을 확보했습니다.<br/>
       항상 ‘내가 얼마나 최선을 다했는지’, ‘어떤 노력을 했는지’를 <span class="hl">생각</span>하며,
       주변 사람과 기업에 <span class="hl">긍정적인 영향</span>을 주는 개발자가 되고자 합니다.
