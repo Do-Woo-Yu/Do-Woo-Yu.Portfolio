@@ -99,6 +99,12 @@
       width:100%; height:420px; background:#e2e8f0 center/cover no-repeat;
       border:2px solid #fff; box-shadow:var(--shadow-sm)
     }
+
+    .photo1{
+      width:100%; height:800px; background:#e2e8f0 center/cover no-repeat;
+      border:2px solid #fff; box-shadow:var(--shadow-sm)
+    }
+
     .profile ul{list-style:none; padding:12px 0 0; margin:0}
     .profile li{padding:12px 0; border-bottom:1px solid var(--line)}
     .label{display:inline-block; min-width:78px; color:var(--muted)}
@@ -222,7 +228,7 @@
           이를 통해 단순한 기능 구현을 넘어 문제를 구조적으로 분석하고 협업 속에서 해결하는 역량을 키울 수 있었습니다.
         </p>
 
-        <h4 style="margin:18px 0 6px">IoT 기반 가스 누출 방지 시스템 <small style="color:var(--muted)">23.03~23.10</small></h4>
+        <h4 style="margin:18px 0 6px">IOT를 이용한 고기능 가스 누출 방지 시스템 설계 <small style="color:var(--muted)">23.03~23.10</small></h4>
         <div class="chips">
           <span class="chip">Kotlin</span>
           <span class="chip">C언어</span>
@@ -230,8 +236,8 @@
           <span class="chip">GitHub</span>
         </div>
         <p>STM32 MCU 기반으로 가스 누출을 실시간 감지하고, 경보·자동 밸브 차단 기능을 구현했습니다. 
-        블루투스 연동 앱을 직접 개발하여 사용자 스마트폰에 알림을 전송하고, 원격 제어로 안전성을 강화했습니다. 
-        학부 졸업작품 경진대회 1등 수상 및 국제 학회 논문 발표로 성과를 인정받았습니다.</p>
+        블루투스 연동 앱을 직접 개발하여 사용자 스마트폰에 알림을 전송하고, 원격 모터 제어로 가스 밸브를 차단할 수 있도록 구현하였습니다. 
+        학부 졸업작품 경진대회 1등 수상하였으며, 국제 학회 논문에 게재되었습니다.</p>
 
         <h4 style="margin:18px 0 6px">관절가동범위 측정 기능을 갖는 연속수동운동 의료기기 시스템 설계 <small style="color:var(--muted)">24.01~24.11</small></h4>
         <span class="chip">C언어</span>
@@ -240,7 +246,7 @@
         <span class="chip">Range of Motion</span>
         <p>의료기기의 관절가동범위를 측정·기록하는 시스템을 설계했습니다. 
         하드웨어 제어와 LCD UI, 데이터 기록 기능을 통합하여 재활 치료의 효율성을 높였습니다. 
-        연구 결과는 반도체디스플레이학회 논문으로 발표되었습니다.</p>
+        연구 결과는 반도체디스플레이학회 논문으로 게재되었습니다.</p>
 
         <h4 style="margin:18px 0 6px">IoT를 이용한 재활 운동 의료기기의 모니터링 시스템 설계 <small style="color:var(--muted)">24.03~24.07</small></h4>
         <span class="chip">Kotlin</span>
@@ -286,13 +292,9 @@
 
     <!-- 프로젝트 1 -->
     <article class="project">
-      <h3 style="text-align:center; margin:0 0 6px">IoT 기반 가스 누출 방지 시스템</h3>
-      <p style="text-align:center; color:#6b7280; margin:0 0 18px">2022.02.26 – 2022.05.31 · 단어 교육용 모바일 애플리케이션</p>
-      <div class="video">
-        <!-- 유튜브/영상 주소로 교체 -->
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          title="project demo" frameborder="0" allowfullscreen></iframe>
-      </div>
+      <h3 style="text-align:center; margin:0 0 6px">IOT를 이용한 고기능 가스 누출 방지 시스템 설계</h3>
+      <p style="text-align:center; color:#6b7280; margin:0 0 18px">2023.03.10 – 2023.10.25 · 가스 사고 예방을 위한 시스템 설계</p>
+      <div class="photo1" style="background-image:url('./IoT.jpg')" title="IOT를 이용한 고기능 가스 누출 방지 시스템 설계"></div>
 
       <!-- 중앙 세로 타임라인 -->
       <div class="timeline">
@@ -305,7 +307,7 @@
         <div class="tl-row">
           <div class="tl-card">
             <h4 style="margin:0 0 6px">개발 이유</h4>
-            <p>육아 중 필요한 단어 학습을 쉽고 재미있게 제공하기 위해 제작.</p>
+            <p>가정에서 가스 누출 사고가 빈번하게 발생하기에 이를 예방하고자 시스템을 설계하였습니다. </p>
           </div>
           <div></div>
         </div>
@@ -318,7 +320,7 @@
           <div></div>
           <div class="tl-card">
             <h4 style="margin:0 0 6px">기술 스택</h4>
-            <p>ReactNative, Firebase, Github</p>
+            <p>Kotlin, C언어, STM32, GitHub</p>
           </div>
         </div>
 
@@ -328,11 +330,20 @@
         </div>
         <div class="tl-row">
           <div class="tl-card">
-            <h4 style="margin:0 0 6px">주 기능</h4>
+            <h4 style="margin:0 0 6px">주 기능</h4></br>
+            <h4 style="margin:0 0 6px">무드등 및 블루투스 스피커 모드(평상시)</h4>
             <ul style="margin:0; padding-left:18px">
-              <li>사진/그림/애니/오디오 콘텐츠</li>
-              <li>다국어 콘텐츠 제공</li>
-              <li>3단계 난이도 구성</li>
+              <li>스마트폰 APP으로 LED 색상 조절</li>
+              <li>블루투스 스피커 기능</li>
+              <li>시간 및 실내 가스 농도( CO(일산화탄소) ) 표시</li>
+              <li>가스 농도를 스마트폰으로 확인 가능</li>
+            </ul></br>
+            <h4 style="margin:0 0 6px">가스 경보 모드(가스 감지시)</h4>
+            <ul style="margin:0; padding-left:18px">
+              <li>가스 감지시 LED 색상이 적색으로 변함</li>
+              <li>LCD에 경고 표시가 출력되며 경보음 발생</li>
+              <li>스마트폰 앱을 통해 가스 경보 알림 및 잠금 기능(블루투스)</li>
+              <li>가스 경보시 가스 밸브 잠금 기능</li>
             </ul>
           </div>
           <div></div>
@@ -347,9 +358,10 @@
           <div class="tl-card">
             <h4 style="margin:0 0 6px">핵심 기술</h4>
             <ul style="margin:0; padding-left:18px">
-              <li>iOS/Android 동시 배포</li>
-              <li>모바일 데이터베이스 관리</li>
-              <li>Admob 광고</li>
+              <li>CO 센서를 통해 실내 가스 농도를 실시간 측정(0~250ppm 범위)</li>
+              <li>MCU 제어 및 임베디드 펌웨어</li>
+              <li>IoT 통신 및 사용자 인터페이스</li>
+              <li>안전 제어 메커니즘</li>
             </ul>
           </div>
         </div>
@@ -362,46 +374,56 @@
           <div class="tl-card">
             <h4 style="margin:0 0 6px">이슈 해결</h4>
             <ul style="margin:0; padding-left:18px">
-              <li>안드로이드 상태바 가림 현상</li>
-              <li>대용량 Git LFS 이슈</li>
-              <li>expo-av 충전 시 동작 멈춤</li>
+              <li>CO 센서 워밍업 문제</li>
+              <li>가스 농도 경계값 설정 문제</li>
+              <li>블루투스 연결 안정성</li>
             </ul>
           </div>
           <div class="tl-card center">
-            <a class="btn" href="#" target="_blank" rel="noreferrer">더 보기</a>
-            <a class="btn" href="#" target="_blank" rel="noreferrer" style="margin-left:8px">APPLE APP STORE</a>
-            <a class="btn" href="#" target="_blank" rel="noreferrer" style="margin-left:8px">GOOGLE PLAY</a>
+          <a class="btn" href="./docs/IOTthesis.pdf" target="_blank" rel="noopener noreferrer" style="margin-left:8px">
+            논문
+          </a>
+          <a class="btn" href="./docs/IOTtech.pdf" target="_blank" rel="noopener noreferrer" style="margin-left:8px">
+            기술 보고서
+          </a>
           </div>
         </div>
       </div>
     </article>
 
     <!-- 프로젝트 2 / 3는 위 article.project를 복제해 내용만 바꾸면 스크린샷처럼 이어집니다 -->
-  </section>
+    </section>
 
-  <!-- RESULTS -->
-  <section id="results" class="container">
-    <div class="section-head">
-      <h2>RESULTS</h2>
-      <span class="divider"></span>
-      <p style="color:#6b7280;margin:8px 0 0">이런 성과가 있었어요</p>
-    </div>
+  <script>
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = '전송 중...';
 
-    <div class="results-grid">
-      <div class="result r1">
-        <h4>서비스 배포</h4>
-        <p>웹·크롬 확장·애플 앱 스토어·구글 플레이에 서비스 배포 경험. 스토어 심사와 배포 자동화 파이프라인 구축.</p>
-      </div>
-      <div class="result r2">
-        <h4>서비스 운영</h4>
-        <p>초기 사용자 피드백을 받아 기능 개선과 안정화 반복. 주기적 로그 분석과 품질 지표 관리.</p>
-      </div>
-      <div class="result r3">
-        <h4>POMOTODO 유저 증가</h4>
-        <p>지속적인 유입/유지 성장과 GitHub Star/Fork 유도. 작은 성공의 축적을 지향.</p>
-      </div>
-    </div>
-  </section>
+      // _replyto에 보낸 사용자의 이메일 채워 넣기(선택)
+      const emailInput = form.querySelector('input[name="email"]');
+      form.querySelector('input[name="_replyto"]').value = emailInput.value;
+
+      try {
+        const res = await fetch('https://formspree.io/f/ehdn4358@naver.com', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          alert('감사합니다! 메시지를 성공적으로 보냈어요.');
+          form.reset();
+        } else {
+          alert('전송에 실패했습니다. 잠시 후 다시 시도해주세요.');
+        }
+      } catch (err) {
+        alert('네트워크 오류가 발생했습니다. 다시 시도해주세요.');
+      } finally {
+        btn.disabled = false; btn.textContent = '보내기 ✈';
+      }
+    });
+  </script>
 
   <!-- CONTACT -->
   <section id="contact" class="container" style="margin-top:30px">
@@ -420,10 +442,6 @@
       </form>
     </div>
   </section>
-
-  <footer>
-    © <span id="y"></span> Yu Do-Woo · Built with vanilla HTML/CSS
-  </footer>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
