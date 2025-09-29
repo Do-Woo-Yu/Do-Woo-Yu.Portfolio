@@ -62,153 +62,119 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">
-        <span>YangLab</span>
-        <span class="badge">FPGA · Embedded · PTP</span>
-      </div>
+      <div class="brand"><span>Yu Do‑Woo</span><span class="badge">Portfolio</span></div>
       <nav aria-label="주요 섹션">
         <ul>
           <li><a href="#about">소개</a></li>
-          <li><a href="#skills">스킬</a></li>
           <li><a href="#projects">프로젝트</a></li>
+          <li><a href="#experience">경험</a></li>
           <li><a href="#pubs">논문/발표</a></li>
+          <li><a href="#skills">스킬</a></li>
           <li><a href="#contact">연락처</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <!-- Hero -->
-    <section class="hero" id="top">
-      <div class="card">
-        <p class="kicker">유도우 · Embedded Systems Engineer</p>
-        <h1 class="title">FPGA/VHDL 기반 <span style="color:var(--brand)">고신뢰성 UART</span>와 STM32/DP83640 <span style="color:var(--accent)">PTP</span> 구현을 연구합니다.</h1>
-        <p class="subtitle">CRC‑16/CCITT · FIFO · Majority Voting 수신 필터 · FMC 버스 연동 · IEEE1588v2 하드웨어 타임스탬핑 · PLC 기반 화재감지 시스템.</p>
-        <div class="pill" aria-label="핵심 키워드">
-          <span>VHDL</span><span>Quartus</span><span>STM32H7</span><span>LwIP RAW</span><span>DP83640</span><span>CRC16‑CCITT</span><span>PTP 2‑Step</span>
-        </div>
-        <div class="cta">
-          <a class="btn primary" href="#projects">프로젝트 보기</a>
-          <a class="btn" href="#contact">이메일 연락</a>
-        </div>
-      </div>
-      <div class="card" style="display:flex;align-items:center;justify-content:center;">
-        <figure style="text-align:center;margin:0">
-          <img src="portrait.jpg" alt="증명사진" style="width:180px;height:180px;border-radius:50%;object-fit:cover;border:6px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,.12)"/>
-          <figcaption style="margin-top:10px;color:var(--muted);font-size:12px">portrait.jpg 파일을 프로젝트 루트에 넣으면 표시됩니다.</figcaption>
+  <main class="container" style="padding-top:28px">
+    <div class="grid" style="grid-template-columns: 300px 1fr; gap:28px; align-items:start">
+      <!-- Sidebar like the example site -->
+      <aside class="card" style="position:sticky; top:88px; height:fit-content;">
+        <figure style="text-align:center;margin:0 0 14px 0">
+          <img src="portrait.jpg" alt="증명사진" style="width:160px;height:160px;border-radius:50%;object-fit:cover;border:6px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,.12)"/>
+          <figcaption class="mono" style="color:var(--muted);font-size:12px;margin-top:8px">portrait.jpg 교체 가능</figcaption>
         </figure>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-      <h2 class="section-title">소개</h2>
-      <div class="grid">
-        <div class="card" style="grid-column: span 7;">
-          <p>임베디드 소프트웨어와 디지털 설계를 아우르는 풀스택 하드웨어 엔지니어를 목표로 합니다. UART‑over‑Powerline(PLC) 기반 위치추적 화재감지, STM32H753 ↔ FPGA FMC 브리지, CRC‑16/CCITT 검출, RX Majority Voting 등 신뢰성 중심 설계를 수행했습니다.</p>
+        <h2 style="margin:6px 0 0 0;">유도우</h2>
+        <p class="subtitle" style="margin:6px 0 12px 0">Embedded / FPGA / PTP</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <a class="btn" href="resume.pdf" download>이력서 PDF</a>
+          <a class="btn" href="mailto:you@example.com">이메일</a>
+          <a class="btn" href="https://github.com/USERNAME" target="_blank" rel="noreferrer">GitHub</a>
         </div>
-        <div class="card" style="grid-column: span 5;">
-          <ul>
-            <li><strong>언어/툴</strong>: C, VHDL, Python, IAR EWARM, CubeMX, Quartus</li>
-            <li><strong>네트워킹</strong>: LwIP RAW, ARP/ICMP, UDP 319/320, PTPv2</li>
-            <li><strong>검증</strong>: SignalTap, Logic Analyzer, Wireshark</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills">
-      <h2 class="section-title">스킬</h2>
-      <div class="grid">
-        <div class="card" style="grid-column: span 4;">
-          <h3>FPGA / RTL</h3>
-          <p>UART RX/TX, FIFO‑256, CRC‑16, 7‑Segment, 디지털 필터</p>
-        </div>
-        <div class="card" style="grid-column: span 4;">
-          <h3>Embedded</h3>
-          <p>STM32H7 ETH(MII), DMA/MPU, FMC 8080, IRQ, LwIP RAW</p>
-        </div>
-        <div class="card" style="grid-column: span 4;">
-          <h3>Networking & Timing</h3>
-          <p>ICMP Ping, UDP, IEEE‑1588v2(2‑step, HW timestamp)</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <h2 class="section-title">프로젝트</h2>
-      <div class="grid">
-        <div class="card project" style="grid-column: span 6;">
-          <h3>고신뢰성 UART (FPGA/VHDL)</h3>
-          <p class="meta">CRC‑16/CCITT · FIFO‑256 · Majority Voting · FMC 브리지</p>
-          <p>CRC‑16/CCITT(0x1021, init 0xFFFF)과 충분한 RX/TX FIFO, 수신 다수결 필터를 통합한 UART. FMC Bank1/NE1(8‑bit, 8080 async)로 STM32와 연동.</p>
-          <div><span class="tag">VHDL</span><span class="tag">Quartus</span><span class="tag">STM32FMC</span></div>
-        </div>
-        <div class="card project" style="grid-column: span 6;">
-          <h3>STM32H753 ↔ DP83640 PTP</h3>
-          <p class="meta">LwIP RAW · UDP 319/320 · HW Timestamp</p>
-          <p>CubeMX 기반 H7 + DP83640 MII. NO_SYS=1 환경에서 Ping → PTP(2‑Step) 순으로 구현, MDIO/ETH DMA 비캐시 메모리 배치와 MPU 정책 정리.</p>
-          <div><span class="tag">PTPv2</span><span class="tag">LwIP</span><span class="tag">IAR</span></div>
-        </div>
-        <div class="card project" style="grid-column: span 6;">
-          <h3>PLC 기반 화재감지 시스템</h3>
-          <p class="meta">NTC 이중센싱 · 차등/정온 결합 알고리즘 · 위치추적</p>
-          <p>전원선 UART 신호를 통해 센서 주소와 화재 위치를 전송. 저가형 수신기에 위치추적 기능을 이식하여 기존 R‑type 수신기 기능을 대체.</p>
-          <div><span class="tag">STM32</span><span class="tag">ADC</span><span class="tag">Algorithm</span></div>
-        </div>
-        <div class="card project" style="grid-column: span 6;">
-          <h3>NUCLEO‑F429 ↔ FPGA UART 브리지</h3>
-          <p class="meta">FMC · 7‑Segment 디스플레이 · CRC 검증</p>
-          <p>CoolTerm 9600‑8N1 로그 기반 검증. EXTI6 IRQ, FIFO/CRC 레지스터 맵(0x00~0x07) 정리 및 실험 절차 문서화.</p>
-          <div><span class="tag">FMC</span><span class="tag">CRC16</span><span class="tag">Validation</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Publications / Talks -->
-    <section id="pubs">
-      <h2 class="section-title">논문 · 발표</h2>
-      <div class="card">
-        <ul>
-          <li>한국정보기술학회 2024 추계종합학술대회 — <em>학술대회 논문(Proceedings) · 분류: 기타</em></li>
-          <li>반도체·디스플레이 학회지 — <em>KCI 국내 등재학술지</em></li>
-          <li>디지털 헬스케어 산학과제 — 학술대회/학회지 다수 발표(요약 가능)</li>
+        <hr style="border:none;border-top:1px solid var(--line);margin:16px 0"/>
+        <ul style="list-style:none;padding:0;margin:0;color:var(--muted);font-size:14px">
+          <li>청주대학교 시스템반도체 석사 예정</li>
+          <li>관심: 고신뢰성 UART, PLC 화재감지, IEEE‑1588</li>
         </ul>
-      </div>
-    </section>
+      </aside>
 
-    <!-- Contact -->
-    <section id="contact">
-      <h2 class="section-title">연락처</h2>
-      <div class="grid">
-        <div class="card" style="grid-column: span 6;">
-          <p>이메일: <a href="mailto:you@example.com">you@example.com</a><br/>GitHub: <a href="https://github.com/USERNAME" target="_blank" rel="noreferrer">github.com/USERNAME</a></p>
-          <p>이 페이지를 GitHub Pages로 배포하려면, 저장소 이름을 <span class="mono">USERNAME.github.io</span> 로 만들고 이 파일을 <span class="mono">index.html</span> 로 커밋하세요.</p>
-        </div>
-        <div class="card" style="grid-column: span 6;">
-          <h3 style="margin-top:0">레쥬메 PDF</h3>
-          <p><a class="btn" href="#" onclick="alert('여기에 resume.pdf 링크를 연결하세요')">다운로드</a></p>
-        </div>
+      <!-- Content column -->
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <section id="about" class="card">
+          <h2 class="section-title">소개</h2>
+          <p>FPGA/VHDL과 STM32를 연결한 <strong>고신뢰성 UART</strong>(CRC‑16/CCITT, FIFO, Majority Voting, FMC 브리지)와 <strong>DP83640 기반 PTP</strong>를 연구/구현합니다. 실제 디버깅과 문서화를 중시하며, Logic Analyzer · SignalTap · Wireshark로 재현 가능한 절차를 정리합니다.</p>
+        </section>
+
+        <section id="projects" class="card">
+          <h2 class="section-title">프로젝트</h2>
+          <div class="grid" style="grid-template-columns:repeat(2,1fr)">
+            <div class="project">
+              <h3>고신뢰성 UART (FPGA/VHDL)</h3>
+              <p class="meta">CRC‑16/CCITT · FIFO‑256 · Majority Voting · FMC</p>
+              <p>CRC‑16/CCITT(0x1021, init 0xFFFF), RX/TX FIFO, RX 다수결 필터, 7‑세그 디스플레이. STM32 FMC Bank1/NE1(8‑bit, 8080 async) 연동.</p>
+              <div><span class="tag">VHDL</span><span class="tag">Quartus</span><span class="tag">STM32FMC</span></div>
+            </div>
+            <div class="project">
+              <h3>STM32H753 ↔ DP83640 PTP</h3>
+              <p class="meta">LwIP RAW · UDP 319/320 · HW Timestamp</p>
+              <p>NO_SYS=1에서 Ping → PTP(2‑Step) 구현. MDIO, ETH DMA 비캐시 배치, MPU 정책 및 타임스탬프 검증.</p>
+              <div><span class="tag">PTPv2</span><span class="tag">LwIP</span><span class="tag">IAR</span></div>
+            </div>
+            <div class="project">
+              <h3>PLC 기반 화재감지</h3>
+              <p class="meta">NTC 이중센싱 · 차등/정온 결합 · 위치추적</p>
+              <p>전원선(UART‑over‑Powerline)으로 센서 주소/화재 위치 전송. 저가형 수신기에 위치추적 기능 이식.</p>
+              <div><span class="tag">STM32</span><span class="tag">ADC</span><span class="tag">Algorithm</span></div>
+            </div>
+            <div class="project">
+              <h3>NUCLEO‑F429 ↔ FPGA 브리지</h3>
+              <p class="meta">FMC · CRC 검증 · 7‑Seg</p>
+              <p>CoolTerm 9600‑8N1 로그 검증, IRQ(EXTI6) 및 FIFO/CRC 레지스터 맵(0x00~0x07) 문서화.</p>
+              <div><span class="tag">FMC</span><span class="tag">CRC16</span><span class="tag">Validation</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="card">
+          <h2 class="section-title">경험</h2>
+          <ul>
+            <li><strong>디지털 헬스케어 산학과제</strong> — LoRa 모듈, LCD, 안드로이드 앱 개발 및 펌웨어 디버깅</li>
+            <li><strong>지문인식센서 Chip MPW</strong> — OPAMP/Bias/Level‑Shifter 설계 및 PDK 전환 검증</li>
+          </ul>
+        </section>
+
+        <section id="pubs" class="card">
+          <h2 class="section-title">논문 · 발표</h2>
+          <ul>
+            <li>한국정보기술학회 2024 추계종합학술대회 — <em>학술대회 논문(Proceedings) · 분류: 기타</em></li>
+            <li>반도체·디스플레이 학회지 — <em>KCI 국내 등재학술지</em></li>
+          </ul>
+        </section>
+
+        <section id="skills" class="card">
+          <h2 class="section-title">스킬</h2>
+          <div class="pill">
+            <span>VHDL</span><span>STM32H7</span><span>ETH DMA/MPU</span><span>LwIP RAW</span><span>PTPv2</span><span>MDIO</span><span>FMC 8080</span><span>Quartus</span><span>IAR EWARM</span>
+          </div>
+        </section>
+
+        <section id="contact" class="card">
+          <h2 class="section-title">연락처</h2>
+          <p>이메일: <a href="mailto:you@example.com">you@example.com</a> · GitHub: <a href="https://github.com/USERNAME" target="_blank" rel="noreferrer">github.com/USERNAME</a></p>
+          <p class="mono">GitHub Pages 배포: 저장소명 <code>USERNAME.github.io</code>, 이 파일을 <code>index.html</code>로 커밋</p>
+        </section>
+
+        <footer style="text-align:center;color:var(--muted);padding:10px 0 24px 0">© <span id="y"></span> Yu Do‑Woo</footer>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer>
-    <div class="container">
-      © <span id="y"></span> Yu Do‑Woo · Built with vanilla HTML/CSS
-    </div>
-  </footer>
-
   <script>
-    // 간단한 스크롤 보정 & 저작권 연도
     document.getElementById('y').textContent = new Date().getFullYear();
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id = a.getAttribute('href');
-        if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'}); }
+        if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth'}); }
       });
     });
   </script>
