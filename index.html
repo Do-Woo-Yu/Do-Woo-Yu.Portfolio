@@ -2,62 +2,124 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>유도우 | 포트폴리오</title>
-  <meta name="description" content="FPGA/VHDL, STM32, PTP(IEEE1588), PLC 기반 화재감지 시스템 프로젝트 포트폴리오" />
+  <meta name="description" content="FPGA/VHDL, STM32, PTP(IEEE 1588), PLC 기반 화재감지 시스템 포트폴리오" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0c10; --card:#121419; --muted:#9aa3b2; --text:#e6e9ef; --brand:#6ae3ff; --accent:#b8ff6a;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --maxw: 1080px;
+      /* 밝은 테마 */
+      --bg:#f6f9fc; --paper:#ffffff; --ink:#0f172a; --muted:#5b6472;
+      --brand:#2563eb; --accent:#10b981; --chip:#eef2ff; --chip2:#ecfeff;
+      --line:#e6e9ef; --ring:rgba(37,99,235,.24);
+      --shadow:0 12px 32px rgba(2,6,23,.06);
+      --shadow-sm:0 8px 22px rgba(2,6,23,.05);
+      --radius:18px; --maxw:1100px;
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Pretendard",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Noto Sans KR",Arial,sans-serif;}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;background:rgba(11,12,16,.7);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid #1d2026;z-index:20}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:58px}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:700}
-    .badge{font-size:12px;background:#1d2026;border:1px solid #2b313b;padding:3px 8px;border-radius:999px;color:var(--muted)}
-    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    nav a{font-weight:600;color:#cdd6f4;opacity:.9}
-    nav a:hover{opacity:1;color:#fff}
-
-    .hero{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center;padding:80px 0}
-    .hero .card{background:linear-gradient(145deg,#0f1117,#0c0e13 60%);border:1px solid #1d2026;border-radius:18px;padding:28px;box-shadow:var(--shadow)}
-    .title{font-size:36px;line-height:1.15;margin:0 0 12px}
-    .subtitle{color:var(--muted);margin:0 0 20px}
-    .pill{display:inline-flex;gap:8px;flex-wrap:wrap}
-    .pill span{border:1px solid #273042;background:#12151c;color:#cfe6ff;border-radius:999px;padding:6px 10px;font-size:12px}
-    .cta{display:flex;gap:12px;margin-top:22px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid #2a2f39;background:#151923;color:#fff;font-weight:600}
-    .btn.primary{background:linear-gradient(180deg,#1f9cf0,#0071e3);border-color:#0e75d8}
-    .btn:hover{transform:translateY(-1px)}
-
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
-    section{padding:40px 0}
-
-    .section-title{font-size:22px;margin:0 0 14px}
-    .card{background:var(--card);border:1px solid #1d2026;border-radius:16px;padding:20px;box-shadow:var(--shadow)}
-    .kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
-
-    .project{display:flex;flex-direction:column;gap:8px}
-    .project h3{margin:0}
-    .meta{font-size:12px;color:var(--muted)}
-    .tag{border:1px solid #2a2f39;border-radius:999px;padding:3px 8px;font-size:12px;color:#cfe6ff;background:#12151c;margin-right:6px}
-
-    footer{padding:40px 0;color:#aab4c6;border-top:1px solid #1d2026}
-
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,#fff 0%, var(--bg) 70%);
+      color:var(--ink); font-family:"Pretendard",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Noto Sans KR",Arial,sans-serif;
+      -webkit-font-smoothing:antialiased; line-height:1.65;
     }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+
+    /* NAV */
+    header{
+      position:sticky; top:0; z-index:20; backdrop-filter:saturate(160%) blur(8px);
+      background:rgba(255,255,255,.7); border-bottom:1px solid var(--line)
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; height:60px}
+    .brand{display:flex; gap:10px; align-items:center; font-weight:800}
+    .badge{font-size:12px; background:#eef2f7; border:1px solid var(--line); padding:4px 10px; border-radius:999px; color:#334155}
+    nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0}
+    nav a{font-weight:600; color:#0f172a; opacity:.85; padding:8px 10px; border-radius:10px}
+    nav a:hover{opacity:1; text-decoration:none; background:#edf2ff}
+
+    /* HERO */
+    .hero{
+      display:grid; grid-template-columns:1.3fr .7fr; gap:26px; align-items:center; padding:64px 0 40px;
+    }
+    .card{
+      background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+      box-shadow:var(--shadow); padding:24px;
+    }
+    .title{font-size:36px; line-height:1.15; margin:0 0 10px}
+    .subtitle{color:var(--muted); margin:0 0 16px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{background:var(--chip); color:#1e3a8a; border:1px solid #dbeafe; border-radius:999px; padding:7px 11px; font-size:12px}
+    .chip2{background:var(--chip2); color:#065f46; border:1px solid #ccfbf1}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid #dbe0e6;
+      background:#f8fafc; color:#0f172a; font-weight:700; box-shadow:var(--shadow-sm); cursor:pointer
+    }
+    .btn.primary{background:linear-gradient(180deg,#3b82f6,#2563eb); border-color:#1d4ed8; color:#fff}
+    .btn:active{transform:translateY(1px)}
+    .avatar{
+      width:160px; height:160px; border-radius:16px; background:#e2e8f0 center/cover no-repeat; border:2px solid #fff; box-shadow:var(--shadow-sm)
+    }
+
+    /* GRID / LAYOUT */
+    section{padding:34px 0}
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:20px}
+    .span-4{grid-column:span 4}
+    .span-6{grid-column:span 6}
+    .span-7{grid-column:span 7}
+    .span-5{grid-column:span 5}
+    .span-12{grid-column:span 12}
+
+    /* SECTIONS */
+    .section-title{font-size:22px; margin:0 0 12px}
+    .kicker{font-size:12px; color:#64748b; letter-spacing:.08em; text-transform:uppercase}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Courier New",monospace}
+    .note{font-size:13px; color:#6b7280; margin-top:6px}
+
+    /* LISTS / TAGS */
+    .list{display:grid; gap:12px}
+    .item h3{margin:0 0 4px; font-size:16px}
+    .item p{margin:0; color:#4b5563; font-size:14px}
+    .tag{display:inline-block; border:1px solid #e5e7eb; border-radius:999px; padding:3px 8px; font-size:12px; background:#f8fafc; margin-right:6px}
+
+    /* TIMELINE */
+    .timeline{position:relative; padding-left:18px}
+    .timeline:before{content:""; position:absolute; left:5px; top:4px; bottom:4px; width:2px; background:#e2e8f0}
+    .tl{position:relative; margin:0 0 14px}
+    .tl:before{
+      content:""; position:absolute; left:-13px; top:5px; width:10px; height:10px; background:#3b82f6; border-radius:50%;
+      box-shadow:0 0 0 3px rgba(59,130,246,.15)
+    }
+
+    /* TABLE (Publications) */
+    table{width:100%; border-collapse:collapse; font-size:14px}
+    th,td{padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top}
+    th{background:#f3f6fb; text-align:left; color:#334155}
+
+    /* FOOTER */
+    footer{padding:28px 0 36px; color:#6b7280; border-top:1px solid var(--line); text-align:center}
+
+    /* RESPONSIVE */
+    @media (max-width:940px){
+      .hero{grid-template-columns:1fr}
+    }
+    @media (max-width:820px){
+      .grid{grid-template-columns:1fr}
+      .span-4,.span-5,.span-6,.span-7,.span-12{grid-column:span 1}
+    }
+
+    /* SMALL INTERACTIONS */
+    :target{scroll-margin-top:90px}
+    .card:focus-within, .card:has(:focus){outline:2px solid var(--ring); outline-offset:2px}
   </style>
 </head>
 <body>
+  <!-- NAV -->
   <header>
     <div class="container nav">
       <div class="brand">
@@ -69,6 +131,7 @@
           <li><a href="#about">소개</a></li>
           <li><a href="#skills">스킬</a></li>
           <li><a href="#projects">프로젝트</a></li>
+          <li><a href="#experience">경력·학력</a></li>
           <li><a href="#pubs">논문/발표</a></li>
           <li><a href="#contact">연락처</a></li>
         </ul>
@@ -77,135 +140,227 @@
   </header>
 
   <main class="container">
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="hero" id="top">
       <div class="card">
         <p class="kicker">유도우 · Embedded Systems Engineer</p>
         <h1 class="title">FPGA/VHDL 기반 <span style="color:var(--brand)">고신뢰성 UART</span>와 STM32/DP83640 <span style="color:var(--accent)">PTP</span> 구현을 연구합니다.</h1>
-        <p class="subtitle">CRC‑16/CCITT · FIFO · Majority Voting 수신 필터 · FMC 버스 연동 · IEEE1588v2 하드웨어 타임스탬핑 · PLC 기반 화재감지 시스템.</p>
-        <div class="pill" aria-label="핵심 키워드">
-          <span>VHDL</span><span>Quartus</span><span>STM32H7</span><span>LwIP RAW</span><span>DP83640</span><span>CRC16‑CCITT</span><span>PTP 2‑Step</span>
+        <p class="subtitle">CRC-16/CCITT · FIFO · Majority Voting 수신 필터 · FMC(8080) 버스 연동 · IEEE 1588v2 하드웨어 타임스탬핑 · PLC 기반 화재감지 시스템.</p>
+        <div class="chips" aria-label="핵심 키워드">
+          <span class="chip">VHDL</span><span class="chip">Quartus</span><span class="chip">STM32H7</span>
+          <span class="chip">LwIP RAW</span><span class="chip">DP83640</span><span class="chip">CRC16-CCITT</span><span class="chip">PTP 2-Step</span>
         </div>
         <div class="cta">
           <a class="btn primary" href="#projects">프로젝트 보기</a>
           <a class="btn" href="#contact">이메일 연락</a>
         </div>
+        <p class="note">사진은 같은 폴더의 <b>profile.jpg</b>를 사용합니다. (자동 표시)</p>
       </div>
+
       <div class="card">
-        <h2 class="section-title">한 줄 소개</h2>
-        <p>청주대학교 시스템반도체 석사 졸업 예정. FPGA/VHDL로 설계한 CRC‑16 + FIFO UART를 STM32 FMC로 구동하고, DP83640 PHY 기반 PTP 동기화를 구현합니다. 현장 친화적인 디버깅(Logic Analyzer, SignalTap, Wireshark)과 문서화를 중시합니다.</p>
-        <p class="mono">SK하이닉스 지원 트랙: 제조(양산기술) · 제조(기반기술)</p>
+        <div style="display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:center">
+          <div class="avatar" style="background-image:url('profile.jpg')" title="증명사진 자리"></div>
+          <div>
+            <h2 class="section-title" style="margin-top:0">한 줄 소개</h2>
+            <p>청주대학교 시스템반도체 석사 졸업 예정. FPGA/VHDL로 설계한 CRC-16 + FIFO UART를 STM32 FMC로 구동하고, DP83640 PHY 기반 PTP 동기화를 구현합니다. 현장 친화적인 디버깅(Logic Analyzer, SignalTap, Wireshark)과 재현 가능한 실험 문서화를 중시합니다.</p>
+            <p class="mono">SK하이닉스 지원 트랙: 제조(양산기술) · 제조(기반기술)</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- About -->
+    <!-- ABOUT -->
     <section id="about">
       <h2 class="section-title">소개</h2>
       <div class="grid">
-        <div class="card" style="grid-column: span 7;">
-          <p>임베디드 소프트웨어와 디지털 설계를 아우르는 풀스택 하드웨어 엔지니어를 목표로 합니다. UART‑over‑Powerline(PLC) 기반 위치추적 화재감지, STM32H753 ↔ FPGA FMC 브리지, CRC‑16/CCITT 검출, RX Majority Voting 등 신뢰성 중심 설계를 수행했습니다.</p>
+        <div class="card span-7">
+          임베디드 SW와 디지털 설계를 아우르는 풀스택 하드웨어 엔지니어를 목표로 합니다.
+          UART-over-Powerline(PLC) 기반 위치추적 화재감지, STM32H753 ↔ FPGA FMC 브리지, CRC-16/CCITT 검출,
+          RX Majority Voting 등 <b>신뢰성 중심 설계</b>를 수행했습니다.
         </div>
-        <div class="card" style="grid-column: span 5;">
-          <ul>
-            <li><strong>언어/툴</strong>: C, VHDL, Python, IAR EWARM, CubeMX, Quartus</li>
-            <li><strong>네트워킹</strong>: LwIP RAW, ARP/ICMP, UDP 319/320, PTPv2</li>
-            <li><strong>검증</strong>: SignalTap, Logic Analyzer, Wireshark</li>
+        <div class="card span-5">
+          <ul class="list" style="margin:0">
+            <li><strong>언어/툴</strong> — C, VHDL, Python, IAR EWARM, CubeMX, Quartus</li>
+            <li><strong>네트워킹</strong> — LwIP RAW, ARP/ICMP, UDP 319/320, PTPv2</li>
+            <li><strong>검증</strong> — SignalTap, Logic Analyzer, Wireshark</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- SKILLS -->
     <section id="skills">
       <h2 class="section-title">스킬</h2>
       <div class="grid">
-        <div class="card" style="grid-column: span 4;">
+        <div class="card span-4">
           <h3>FPGA / RTL</h3>
-          <p>UART RX/TX, FIFO‑256, CRC‑16, 7‑Segment, 디지털 필터</p>
+          <p>UART RX/TX, FIFO-256, CRC-16, 7-Segment, 디지털 필터</p>
+          <div class="chips"><span class="chip">VHDL</span><span class="chip">Quartus</span><span class="chip chip2">Timing</span></div>
         </div>
-        <div class="card" style="grid-column: span 4;">
+        <div class="card span-4">
           <h3>Embedded</h3>
           <p>STM32H7 ETH(MII), DMA/MPU, FMC 8080, IRQ, LwIP RAW</p>
+          <div class="chips"><span class="chip">HAL/CubeMX</span><span class="chip">IAR</span><span class="chip chip2">Bare-metal</span></div>
         </div>
-        <div class="card" style="grid-column: span 4;">
+        <div class="card span-4">
           <h3>Networking & Timing</h3>
-          <p>ICMP Ping, UDP, IEEE‑1588v2(2‑step, HW timestamp)</p>
+          <p>ICMP Ping, UDP, IEEE-1588v2(2-Step, HW timestamp)</p>
+          <div class="chips"><span class="chip">DP83640</span><span class="chip">UDP 319/320</span><span class="chip chip2">PTP</span></div>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- PROJECTS -->
     <section id="projects">
       <h2 class="section-title">프로젝트</h2>
       <div class="grid">
-        <div class="card project" style="grid-column: span 6;">
+        <div class="card project span-6">
           <h3>고신뢰성 UART (FPGA/VHDL)</h3>
-          <p class="meta">CRC‑16/CCITT · FIFO‑256 · Majority Voting · FMC 브리지</p>
-          <p>CRC‑16/CCITT(0x1021, init 0xFFFF)과 충분한 RX/TX FIFO, 수신 다수결 필터를 통합한 UART. FMC Bank1/NE1(8‑bit, 8080 async)로 STM32와 연동.</p>
+          <p class="item">CRC-16/CCITT · FIFO-256 · Majority Voting · FMC 브리지</p>
+          <ul class="list">
+            <li>다중 비트/버스트 오류 검출(폴리 0x1021, init 0xFFFF)</li>
+            <li>RX 1-클럭 pop 정책, 레지스터 맵 0x00~0x07</li>
+            <li>FMC Bank1/NE1(8-bit, 8080 async)로 STM32 연동</li>
+          </ul>
           <div><span class="tag">VHDL</span><span class="tag">Quartus</span><span class="tag">STM32FMC</span></div>
         </div>
-        <div class="card project" style="grid-column: span 6;">
+
+        <div class="card project span-6">
           <h3>STM32H753 ↔ DP83640 PTP</h3>
-          <p class="meta">LwIP RAW · UDP 319/320 · HW Timestamp</p>
-          <p>CubeMX 기반 H7 + DP83640 MII. NO_SYS=1 환경에서 Ping → PTP(2‑Step) 순으로 구현, MDIO/ETH DMA 비캐시 메모리 배치와 MPU 정책 정리.</p>
+          <p class="item">LwIP RAW · UDP 319/320 · HW Timestamp</p>
+          <ul class="list">
+            <li>NO_SYS=1, 링크 폴링 + 주기적 sys_check_timeouts()</li>
+            <li>ETH DMA D2 비캐시 배치 및 MPU 정책 정리</li>
+            <li>Ping → PTP(2-Step) 순 incremental bring-up</li>
+          </ul>
           <div><span class="tag">PTPv2</span><span class="tag">LwIP</span><span class="tag">IAR</span></div>
         </div>
-        <div class="card project" style="grid-column: span 6;">
+
+        <div class="card project span-6">
           <h3>PLC 기반 화재감지 시스템</h3>
-          <p class="meta">NTC 이중센싱 · 차등/정온 결합 알고리즘 · 위치추적</p>
-          <p>전원선 UART 신호를 통해 센서 주소와 화재 위치를 전송. 저가형 수신기에 위치추적 기능을 이식하여 기존 R‑type 수신기 기능을 대체.</p>
+          <p class="item">NTC 이중센싱 · 차등/정온 결합 알고리즘 · 위치추적</p>
+          <ul class="list">
+            <li>전원선 UART 신호로 센서 주소·화재 위치 전송</li>
+            <li>저가형 수신기에 위치추적 기능 이식(R-type 대체)</li>
+            <li>오경보 저감: 이동평균 + 기울기 임계 다단 검출</li>
+          </ul>
           <div><span class="tag">STM32</span><span class="tag">ADC</span><span class="tag">Algorithm</span></div>
         </div>
-        <div class="card project" style="grid-column: span 6;">
-          <h3>NUCLEO‑F429 ↔ FPGA UART 브리지</h3>
-          <p class="meta">FMC · 7‑Segment 디스플레이 · CRC 검증</p>
-          <p>CoolTerm 9600‑8N1 로그 기반 검증. EXTI6 IRQ, FIFO/CRC 레지스터 맵(0x00~0x07) 정리 및 실험 절차 문서화.</p>
+
+        <div class="card project span-6">
+          <h3>NUCLEO-F429 ↔ FPGA UART 브리지</h3>
+          <p class="item">FMC · 7-Segment · CRC 검증</p>
+          <ul class="list">
+            <li>CoolTerm 9600-8N1 로그 기반 CRC/TX/RX 검증</li>
+            <li>PG6 EXTI6 IRQ, 상태 레지스터 기반 디버깅 루틴</li>
+            <li>실험 절차서 및 체크리스트 문서화</li>
+          </ul>
           <div><span class="tag">FMC</span><span class="tag">CRC16</span><span class="tag">Validation</span></div>
         </div>
       </div>
     </section>
 
-    <!-- Publications / Talks -->
-    <section id="pubs">
-      <h2 class="section-title">논문 · 발표</h2>
-      <div class="card">
-        <ul>
-          <li>한국정보기술학회 2024 추계종합학술대회 — <em>학술대회 논문(Proceedings) · 분류: 기타</em></li>
-          <li>반도체·디스플레이 학회지 — <em>KCI 국내 등재학술지</em></li>
-          <li>디지털 헬스케어 산학과제 — 학술대회/학회지 다수 발표(요약 가능)</li>
-        </ul>
+    <!-- EXPERIENCE / EDUCATION -->
+    <section id="experience">
+      <h2 class="section-title">경력 · 학력</h2>
+      <div class="grid">
+        <div class="card span-6">
+          <h3>타임라인</h3>
+          <div class="timeline">
+            <div class="tl">
+              <strong>석사 연구</strong> — CRC/FIFO UART · PLC 화재감지 · PTP <em>(현재)</em>
+              <div class="note">STM32H7 + DP83640 · FPGA/VHDL · FMC 인터페이스</div>
+            </div>
+            <div class="tl">
+              <strong>학부 프로젝트</strong> — IoT 가스 누출 방지 시스템 1등
+              <div class="note">STM32 · DC 모터 · 안드로이드 앱</div>
+            </div>
+            <div class="tl">
+              <strong>헬스케어 산학과제</strong> — LoRa 원격 모니터링, LCD UI
+              <div class="note">로그 규칙 표준화 · 재현성 향상</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card span-6">
+          <h3>학력</h3>
+          <ul class="list">
+            <li><strong>청주대학교 대학원</strong> (시스템반도체공학, 석사) — 재학</li>
+            <li><strong>청주대학교</strong> (시스템반도체공학, 학사) — 졸업</li>
+          </ul>
+          <h3 style="margin-top:18px">자격 · 수상</h3>
+          <ul class="list">
+            <li>OPIc IM1</li>
+            <li>학부 작품 경진대회 1등 (IoT 가스 누출 방지)</li>
+            <li>2종 보통 운전면허</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- PUBLICATIONS -->
+    <section id="pubs">
+      <h2 class="section-title">논문 · 발표</h2>
+      <div class="card">
+        <table aria-label="논문 및 발표 목록">
+          <thead>
+            <tr><th style="width:28%">연도/구분</th><th>제목</th><th style="width:24%">비고</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024 · 학술대회</td>
+              <td>IoT 재활운동 의료기기 모니터링 시스템</td>
+              <td>한국정보기술학회 추계 종합학술대회</td>
+            </tr>
+            <tr>
+              <td>— · 학회지</td>
+              <td>PLC 통신 기반 실시간 화재 위치 추적 시스템</td>
+              <td>반도체·디스플레이 학회지 (투고/예정)</td>
+            </tr>
+            <tr>
+              <td>— · 학회지</td>
+              <td>연속수동운동(CPM) 의료기기 시스템 설계</td>
+              <td>KCI 등재 학술지</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact">
       <h2 class="section-title">연락처</h2>
       <div class="grid">
-        <div class="card" style="grid-column: span 6;">
-          <p>이메일: <a href="mailto:you@example.com">you@example.com</a><br/>GitHub: <a href="https://github.com/USERNAME" target="_blank" rel="noreferrer">github.com/USERNAME</a></p>
-          <p>이 페이지를 GitHub Pages로 배포하려면, 저장소 이름을 <span class="mono">USERNAME.github.io</span> 로 만들고 이 파일을 <span class="mono">index.html</span> 로 커밋하세요.</p>
+        <div class="card span-6">
+          <p>이메일: <a href="mailto:you@example.com">you@example.com</a><br/>
+             GitHub: <a href="https://github.com/USERNAME" target="_blank" rel="noreferrer">github.com/USERNAME</a></p>
+          <p class="note">이 페이지를 GitHub Pages로 배포하려면, 저장소를 <span class="mono">USERNAME.github.io</span>로 만들고 이 파일을 <span class="mono">index.html</span>로 커밋하세요.</p>
         </div>
-        <div class="card" style="grid-column: span 6;">
+        <div class="card span-6">
           <h3 style="margin-top:0">레쥬메 PDF</h3>
-          <p><a class="btn" href="#" onclick="alert('여기에 resume.pdf 링크를 연결하세요')">다운로드</a></p>
+          <p><a class="btn" href="#" onclick="alert('resume.pdf 경로로 연결하세요')">다운로드</a></p>
+          <div class="chips"><span class="chip">PDF</span><span class="chip chip2">한글/영문</span></div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      © <span id="y"></span> Yu Do‑Woo · Built with vanilla HTML/CSS
-    </div>
+    © <span id="y"></span> Yu Do-Woo · Built with vanilla HTML/CSS
   </footer>
 
   <script>
-    // 간단한 스크롤 보정 & 저작권 연도
+    // 현재 연도 & 부드러운 스크롤
     document.getElementById('y').textContent = new Date().getFullYear();
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id = a.getAttribute('href');
-        if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'}); }
+        if(id && id.length>1){
+          const el = document.querySelector(id);
+          if(!el) return;
+          e.preventDefault();
+          window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 70, behavior:'smooth'});
+        }
       });
     });
   </script>
